@@ -1,7 +1,5 @@
 package ru.mattakvshi.repositoryTrainProject.company;
 
-
-
 import ru.mattakvshi.repositoryTrainProject.company.employee.Employee;
 import ru.mattakvshi.repositoryTrainProject.company.employee.ITRole;
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for AOPTrainProject" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar" />
+        </processorPath>
+        <module name="SixSpring(Hibernate2)" />
+        <module name="SpringRepositoryTrainProject" />
+        <module name="HibernateTrainProject" />
+        <module name="SixSpring(Hibernate2" />
+        <module name="FourSpring(MVS)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="FiveSpring(Hibernate1)" target="9" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="FiveSpring(Hibernate1)" options="-parameters" />
+      <module name="FourSpring(MVS)" options="-parameters" />
+      <module name="HibernateTrainProject" options="-parameters" />
+      <module name="SixSpring(Hibernate2" options="-parameters" />
+      <module name="SixSpring(Hibernate2)" options="-parameters" />
+      <module name="SpringRepositoryTrainProject" options="-parameters" />
+    </option>
+  </component>
+</project>
