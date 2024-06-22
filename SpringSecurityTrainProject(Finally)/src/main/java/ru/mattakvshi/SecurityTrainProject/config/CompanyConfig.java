@@ -5,13 +5,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.*;
 import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.context.annotation.SessionScope;
-import ru.mattakvshi.SecurityTrainProject.company.ITCompany;
-import ru.mattakvshi.SecurityTrainProject.company.employee.Employee;
-import ru.mattakvshi.SecurityTrainProject.company.employee.ITRole;
+import ru.mattakvshi.SecurityTrainProject.entity.company.ITCompany;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.Employee;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.ITRole;
 
 @Slf4j
 @Configuration
-@ComponentScan("ru.mattakvshi.SecurityTrainProject.company")
+@ComponentScan("ru.mattakvshi.SecurityTrainProject.entity")
 public class CompanyConfig {
    @Bean
    @Primary //С помощью этой анотации мы зззадаём бин по умолчанию, чтобы, если у нас множество бинов, контест спринга не ломался, не зная какие бины брать

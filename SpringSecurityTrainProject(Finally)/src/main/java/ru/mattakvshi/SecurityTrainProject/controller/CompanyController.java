@@ -4,10 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.mattakvshi.SecurityTrainProject.company.employee.Developer;
-import ru.mattakvshi.SecurityTrainProject.company.employee.Employee;
-import ru.mattakvshi.SecurityTrainProject.company.employee.ITRole;
-import ru.mattakvshi.SecurityTrainProject.company.employee.PM;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.Developer;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.Employee;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.ITRole;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.PM;
 import ru.mattakvshi.SecurityTrainProject.dto.CompanyDTO;
 import ru.mattakvshi.SecurityTrainProject.dto.ITEmployeeDTO;
 import ru.mattakvshi.SecurityTrainProject.service.CompanyService;
@@ -32,6 +32,13 @@ public class CompanyController {
     public CompanyDTO company(@PathVariable long id){
         log.info("get company info");
         return CompanyDTO.from(companyService.getCompany(id));
+    }
+
+    @GetMapping("/my")
+    public List<CompanyDTO> myCompany(){
+        return companyService.getMyCompanies().stream()
+                .map(CompanyDTO::from)
+                .collect(Collectors.toList());
     }
 
     @PostMapping("/{id}/employers/developers")

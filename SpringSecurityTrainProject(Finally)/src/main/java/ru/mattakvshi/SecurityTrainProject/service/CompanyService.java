@@ -1,10 +1,10 @@
 package ru.mattakvshi.SecurityTrainProject.service;
 
-import ru.mattakvshi.SecurityTrainProject.company.ITCompany;
-import ru.mattakvshi.SecurityTrainProject.company.employee.Developer;
-import ru.mattakvshi.SecurityTrainProject.company.employee.Employee;
-import ru.mattakvshi.SecurityTrainProject.company.employee.ITRole;
-import ru.mattakvshi.SecurityTrainProject.company.employee.PM;
+import ru.mattakvshi.SecurityTrainProject.entity.company.ITCompany;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.Developer;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.Employee;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.ITRole;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.PM;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -14,6 +14,8 @@ public interface CompanyService {
     Long createCompany(ITCompany company);
 
     ITCompany getCompany(long id);
+
+    List<ITCompany> getMyCompanies();
 
     @Transactional
     void addDeveloper(Developer developer, long company_id);

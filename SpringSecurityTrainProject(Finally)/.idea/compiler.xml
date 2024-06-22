@@ -13,22 +13,14 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar" />
         </processorPath>
         <module name="SixSpring(Hibernate2)" />
-        <module name="SpringRepositoryTrainProject" />
         <module name="HibernateTrainProject" />
+        <module name="AOPTrainProject" />
+        <module name="SpringRepositoryTrainProject" />
+        <module name="SpringSecurityTrainProject" />
         <module name="SixSpring(Hibernate2" />
         <module name="FourSpring(MVS)" />
-      </profile>
-      <profile name="Annotation profile for AOPTrainProject" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar" />
-        </processorPath>
-        <module name="AOPTrainProject" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -44,6 +36,7 @@
       <module name="SixSpring(Hibernate2" options="-parameters" />
       <module name="SixSpring(Hibernate2)" options="-parameters" />
       <module name="SpringRepositoryTrainProject" options="-parameters" />
+      <module name="SpringSecurityTrainProject" options="-parameters" />
     </option>
   </component>
 </project>

@@ -1,8 +1,8 @@
 package ru.mattakvshi.SecurityTrainProject.dto;
 
 import lombok.Data;
-import ru.mattakvshi.SecurityTrainProject.company.employee.Employee;
-import ru.mattakvshi.SecurityTrainProject.company.employee.ITRole;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.Employee;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.ITRole;
 
 
 

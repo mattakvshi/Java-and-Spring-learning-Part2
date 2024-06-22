@@ -3,9 +3,9 @@ package ru.mattakvshi.SecurityTrainProject.dao.repository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import ru.mattakvshi.SecurityTrainProject.company.ITCompany;
-import ru.mattakvshi.SecurityTrainProject.company.employee.Employee;
-import ru.mattakvshi.SecurityTrainProject.company.employee.ITRole;
+import ru.mattakvshi.SecurityTrainProject.entity.company.ITCompany;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.Employee;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.ITRole;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package ru.mattakvshi.SecurityTrainProject.dao;
 
-import ru.mattakvshi.SecurityTrainProject.company.employee.Employee;
-import ru.mattakvshi.SecurityTrainProject.company.employee.ITRole;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.Employee;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.ITRole;
 
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;

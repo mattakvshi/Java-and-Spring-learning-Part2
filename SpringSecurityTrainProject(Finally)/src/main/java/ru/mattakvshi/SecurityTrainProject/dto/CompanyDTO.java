@@ -1,9 +1,9 @@
 package ru.mattakvshi.SecurityTrainProject.dto;
 import lombok.Data;
 import org.springframework.util.CollectionUtils;
-import ru.mattakvshi.SecurityTrainProject.company.ITCompany;
-import ru.mattakvshi.SecurityTrainProject.company.employee.Employee;
-import ru.mattakvshi.SecurityTrainProject.company.employee.ITRole;
+import ru.mattakvshi.SecurityTrainProject.entity.company.ITCompany;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.Employee;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.ITRole;
 
 import java.util.List;
 import java.util.stream.Collectors;

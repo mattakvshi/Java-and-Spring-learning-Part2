@@ -2,13 +2,15 @@ package ru.mattakvshi.SecurityTrainProject.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import ru.mattakvshi.SecurityTrainProject.aspect.LogExecutionTime;
-import ru.mattakvshi.SecurityTrainProject.company.ITCompany;
-import ru.mattakvshi.SecurityTrainProject.company.employee.Developer;
-import ru.mattakvshi.SecurityTrainProject.company.employee.Employee;
-import ru.mattakvshi.SecurityTrainProject.company.employee.ITRole;
-import ru.mattakvshi.SecurityTrainProject.company.employee.PM;
+import ru.mattakvshi.SecurityTrainProject.entity.auth.Account;
+import ru.mattakvshi.SecurityTrainProject.entity.company.ITCompany;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.Developer;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.Employee;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.ITRole;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.PM;
 import ru.mattakvshi.SecurityTrainProject.dao.CompanyDAO;
 import ru.mattakvshi.SecurityTrainProject.dao.EmployeeDAO;
 
@@ -37,6 +39,12 @@ public class CompanyServiceImpl implements CompanyService{
     @LogExecutionTime
     public ITCompany getCompany(long id) {
        return companyDAO.find(id);
+    }
+
+    @Override
+    public List<ITCompany> getMyCompanies() {
+        Account account = (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return companyDAO.findByDirector(account.getEmployee());
     }
 
     @Override

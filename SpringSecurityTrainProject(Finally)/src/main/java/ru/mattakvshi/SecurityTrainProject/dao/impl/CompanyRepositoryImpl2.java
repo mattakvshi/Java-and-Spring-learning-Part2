@@ -5,11 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import ru.mattakvshi.SecurityTrainProject.company.ITCompany;
-import ru.mattakvshi.SecurityTrainProject.company.employee.Developer;
-import ru.mattakvshi.SecurityTrainProject.company.employee.Employee;
-import ru.mattakvshi.SecurityTrainProject.company.employee.ITRole;
-import ru.mattakvshi.SecurityTrainProject.company.employee.PM;
+import ru.mattakvshi.SecurityTrainProject.entity.company.ITCompany;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.Developer;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.Employee;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.ITRole;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.PM;
 import ru.mattakvshi.SecurityTrainProject.dao.CompanyDAO;
 import ru.mattakvshi.SecurityTrainProject.dao.EmployeeDAO;
 import ru.mattakvshi.SecurityTrainProject.dao.repository.CompanyRepository;
@@ -47,6 +47,11 @@ public class CompanyRepositoryImpl2 implements CompanyDAO, EmployeeDAO {
     public ITCompany find(long id) {
         log.info("I working with CrudRepository and CompanyRepositoryImpl2 because this Primary!!");
         return companyRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<ITCompany> findByDirector(Employee<ITRole> director) {
+        return companyRepository.findByDirector(director);
     }
 
     @Override
