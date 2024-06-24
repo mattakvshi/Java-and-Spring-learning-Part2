@@ -18,7 +18,7 @@ public class Employee<T> implements Worker {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -50,7 +50,7 @@ public class Employee<T> implements Worker {
         return name;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

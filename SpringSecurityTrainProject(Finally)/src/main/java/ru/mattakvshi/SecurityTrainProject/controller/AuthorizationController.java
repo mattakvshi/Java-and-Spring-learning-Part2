@@ -3,15 +3,20 @@ package ru.mattakvshi.SecurityTrainProject.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import ru.mattakvshi.SecurityTrainProject.dto.AccountDTO;
 import ru.mattakvshi.SecurityTrainProject.entity.auth.Account;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.Employee;
+import ru.mattakvshi.SecurityTrainProject.entity.employee.ITRole;
 import ru.mattakvshi.SecurityTrainProject.security.dto.AuthRequests;
 import ru.mattakvshi.SecurityTrainProject.security.dto.AuthResponse;
 import ru.mattakvshi.SecurityTrainProject.security.JWTProvider;
 import ru.mattakvshi.SecurityTrainProject.security.dto.RegistrationRequest;
+import ru.mattakvshi.SecurityTrainProject.service.CompanyService;
 import ru.mattakvshi.SecurityTrainProject.service.auth.AccountService;
 
 import javax.validation.Valid;
@@ -21,6 +26,9 @@ public class AuthorizationController {
 
     @Autowired
     private AccountService accountServiceRe;
+
+    @Autowired
+    private CompanyService companyService;
 
     @Autowired
     private JWTProvider jwtProvider;
@@ -39,8 +47,9 @@ public class AuthorizationController {
     }
 
     @GetMapping("/me")
-    public ResponseEntity<Account> getCurrentUser() {
+    public ResponseEntity<AccountDTO> getCurrentUser() {
         Account account = (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return ResponseEntity.ok(account);
+        AccountDTO accountDTO = AccountDTO.from(account);
+        return ResponseEntity.ok(accountDTO);
     }
 }

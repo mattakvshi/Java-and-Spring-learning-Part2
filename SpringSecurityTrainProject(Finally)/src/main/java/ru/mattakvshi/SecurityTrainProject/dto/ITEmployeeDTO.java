@@ -8,7 +8,7 @@ import ru.mattakvshi.SecurityTrainProject.entity.employee.ITRole;
 
 @Data
 public class ITEmployeeDTO {
-    private int id;
+    private Long id;
     private String name;
     private int age;
     private ITRole role;
@@ -16,7 +16,7 @@ public class ITEmployeeDTO {
     public static ITEmployeeDTO from(Employee<ITRole> employee) {
         ITEmployeeDTO dto = new ITEmployeeDTO();
         dto.setAge(employee.getAge());
-        dto.setId(employee.getAge());
+        dto.setId(employee.getId());
         dto.setName(employee.getName());
         dto.setRole(employee.getRole());
         return dto;
