@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/company")
 public class CompanyController {
+
     @Autowired
     private CompanyService companyService;
 
